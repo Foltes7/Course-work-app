@@ -1,0 +1,7 @@
+export interface UserRegisterDto {
+    userName: string;
+    password: string;
+    email: string;
+    avatar: string;
+    emailConfirmed: boolean;
+}

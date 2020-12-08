@@ -1,0 +1,23 @@
+<mat-card>
+  <mat-card-header>
+    <img mat-card-avatar src="{{comment.author.avatar}}" alt="Avatar">
+    <mat-card-title>{{comment.author.userName}} </mat-card-title>
+    <div>{{comment.createdAt | date:'d/M/yy, h:mm a'}}</div>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{comment.body}}</p>
+  </mat-card-content>
+  <mat-card-actions class="actions-buttons" align="end">
+    <button mat-icon-button color="warn" (click)="CommentLike()">
+      <mat-icon matBadge="{{like}}" matBadgeSize="small" [matBadgeHidden]="like === 0" aria-label="Like">favorite
+      </mat-icon>
+    </button>
+    <button mat-icon-button color="primary" (click)="CommentDisLike()">
+      <mat-icon matBadge="{{dislike}}" matBadgeSize="small" [matBadgeHidden]="dislike === 0" aria-label="Like">favorite
+      </mat-icon>
+    </button>
+    <button mat-icon-button color="accent">
+      <mat-icon aria-label="Share">share</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

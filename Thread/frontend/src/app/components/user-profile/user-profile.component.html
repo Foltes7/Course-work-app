@@ -1,0 +1,31 @@
+<mat-card class="main-content align-center">
+  <div *ngIf="loading" class="mat-spinner-wrapper">
+    <mat-spinner></mat-spinner>
+  </div>
+  <div class="avatar-container" (click)="file.click()">
+    <input hidden class="file-hide" #file accept="image/*" type="file" (change)="handleFileInput($event.target)">
+    <img class="avatar avatar-style" src="{{user.avatar}}" alt="Here should be an avatar">
+    <div class="img-text">
+      Upload
+    </div>
+
+  </div>
+  <form name="userForm" #userForm="ngForm" class="main-content">
+    <mat-form-field>
+      <input name="email" [(ngModel)]="user.email" #email="ngModel" matInput placeholder="Email">
+    </mat-form-field>
+    <mat-form-field>
+      <input name="username" [(ngModel)]="user.userName" #username="ngModel" matInput placeholder="Username">
+    </mat-form-field>
+    <div *ngIf="user.emailConfirmed">Profile is verified</div>
+    <div *ngIf="!user.emailConfirmed">Profile is not verified</div>
+  </form>
+  <div class="buttons">
+    <button mat-raised-button color="primary" (click)="saveNewInfo()">
+      Save
+    </button>
+    <button mat-raised-button (click)="goBack()">
+      Back
+    </button>
+  </div>
+</mat-card>

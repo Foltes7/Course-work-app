@@ -1,0 +1,18 @@
+<div mat-dialog-content>
+    <div class="flex-container wrap">
+        <div class="flex-item ">
+            <mat-icon matBadgeColor="accent" color="warn" matBadgeSize="medium" aria-label="Like">favorite</mat-icon>
+            <mat-list>
+                <p *ngFor="let link of LikeUser">• {{ link.userName  }} </p>
+            </mat-list>
+        </div>
+        <div class="flex-item line">
+        </div>
+        <div class="flex-item ">
+            <mat-icon matBadgeColor="accent" color="primary" matBadgeSize="medium" aria-label="Like">favorite</mat-icon>
+            <mat-nav-list>
+                <p *ngFor="let link of DisLikeUser">• {{ link.userName  }} </p>
+            </mat-nav-list>
+        </div>
+    </div>
+</div>
